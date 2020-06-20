@@ -1,0 +1,20 @@
+<fa-icon [icon]="faCoffee"></fa-icon>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Capa</th>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Estoque</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td><img class="thumb img-fluid" [src]="product.imageUrl" /></td>
+      <td class="align-middle">{{ product.name }}</td>
+      <td class="align-middle">{{ product.unitPrice | currency:'BRL' }}</td>
+      <td class="align-middle">{{ product.unitsInStock }}</td>
+    </tr>
+  </tbody>
+</table>
