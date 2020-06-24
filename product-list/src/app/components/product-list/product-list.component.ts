@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/commom/product';
 
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
+import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+import { faList } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-list',
@@ -11,7 +13,10 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  faCoffee = faCoffee;
+  faCode = faCode;
+  faCameraRetro = faCameraRetro;
+  faMoneyBill = faMoneyBill;
+  faList = faList;
 
   products: Product[];
   constructor(private productService: ProductService) { }
