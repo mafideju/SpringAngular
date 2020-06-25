@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ShoppingDetailComponent } from './components/shopping-detail/shopping-detail.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CheckoutPageComponent } from './components/checkout-page/checkout-page.
     HomeComponent,
     ProductDetailComponent,
     ShoppingDetailComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    ProductCategoryMenuComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
