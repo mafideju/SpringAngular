@@ -1,3 +1,14 @@
+.mat-elevation-z8 {
+  margin-left: 200px;
+}
+
+.table {
+  &__image {
+    margin: .25rem 0;
+    height: 5rem;
+  }
+}
+
 /*
  * ----------------------------
  * Common CSS
@@ -679,18 +690,6 @@ select{
 * ----------------------------
 */
 
-table {
-  tbody {
-    tr {
-      td {
-        img{
-          height: 50px;
-        }
-      }
-    }
-  }
-}
-
 .table{
   margin:0
 }
@@ -1047,3 +1046,6 @@ footer ul li{
       padding:8px 0
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
