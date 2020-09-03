@@ -1,0 +1,26 @@
+form {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1rem;
+
+  mat-form-field {
+    width: 80%;
+
+    ::placeholder {
+      color: #ede0ff;
+    }
+    input {
+      color: #fff;
+    }
+    mat-label {
+      color: #ede0ff!important;
+    }
+  }
+
+  button {
+    height: 2.5rem;
+    margin-top: 0.5rem;
+  }
+}

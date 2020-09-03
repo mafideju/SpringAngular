@@ -1,21 +1,3 @@
-<!-- <table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Produto</th>
-      <th>Preço</th>
-      <th>Estoque</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of products">
-      <td><img [src]="product.imageUrl" /></td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.unitPrice | currency:"BRL" }}</td>
-      <td>{{ product.unitsInStock }}</td>
-    </tr>
-  </tbody>
-</table> -->
 <mat-table [dataSource]="products" class="mat-elevation-z8">
 
   <ng-container matColumnDef="Imagem">

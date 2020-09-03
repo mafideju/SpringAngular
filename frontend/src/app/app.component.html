@@ -4,44 +4,52 @@
       <aside class="menu-sidebar">
         <div class="logo">
           <a href="home.html">
-            <img src="assets/images/logo.png" alt="luv2shop" class="img-responsive">
+            <img src="assets/images/logo.png" alt="luv2shop" style="width: 100%;">
           </a>
         </div>
-        <nav class="navbar-sidebar">
-          <ul>
-            <li>
-              <a href="#">Books</a>
-            </li>
-            <li>
-              <a href="#">Coffee Mugs</a>
-            </li>
-            <li>
-              <a href="#">Mouse Pads</a>
-            </li>
-            <li>
-              <a href="#">Luggage Tags</a>
-            </li>
-          </ul>
+        <nav>
+          <mat-selection-list [multiple]="false">
+            <mat-list-option>
+              <a href="home.html">Livros</a>
+            </mat-list-option>
+            <mat-list-option>
+              <a href="home.html">Canecas</a>
+            </mat-list-option>
+            <mat-list-option>
+              <a href="home.html">Pads</a>
+            </mat-list-option>
+            <mat-list-option>
+              <a href="home.html">Tags</a>
+            </mat-list-option>
+          </mat-selection-list>
         </nav>
       </aside>
     </mat-sidenav>
   </mat-sidenav-container>
 </div>
 
-<!-- PAGE CONTAINER-->
 <div class="page-container">
-  <!-- HEADER DESKTOP-->
   <header class="header-desktop">
     <div class="section-content section-content-p30">
       <div class="container-fluid">
         <div class="header-wrap">
+
           <form class="form-header" onsubmit="return false;" method="GET">
-            <input class="au-input au-input-xl" type="text" name="search"
-              placeholder="Procure seu produto!" />
-            <button class="au-btn-submit" type="submit">
-              Buscar
-            </button>
+
+            <mat-form-field appearance="fill">
+              <mat-label>faça uma busca...</mat-label>
+              <input
+                matInput
+                type="text"
+                name="search"
+                placeholder="...encontre seu produto!"
+              />
+            </mat-form-field>
+
+            <button mat-raised-button color="primary">Buscar</button>
+
           </form>
+
           <div class="cart-area d-n">
             <a href="shopping-detail.html">
               <div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart"
@@ -53,7 +61,6 @@
       </div>
     </div>
   </header>
-  <!-- END HEADER DESKTOP-->
 </div>
 
 <section>
