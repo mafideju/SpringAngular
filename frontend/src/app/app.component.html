@@ -1,3 +1,7 @@
+<!-- ******* TODO ******* -->
+<!-- ******* TODO ******* -->
+<!-- ******* TODO ******* -->
+<!-- COMPONENTIZAR COMO SIDENAV -->
 <div class="page-wrapper">
   <mat-sidenav-container>
     <mat-sidenav mode="side" opened>
@@ -10,16 +14,16 @@
         <nav>
           <mat-selection-list [multiple]="false">
             <mat-list-option>
-              <a href="home.html">Livros</a>
+              <a routerLinkActive="active" routerLink="/category/1">Livros</a>
             </mat-list-option>
             <mat-list-option>
-              <a href="home.html">Canecas</a>
+              <a routerLinkActive="active" routerLink="/category/2">Canecas</a>
             </mat-list-option>
             <mat-list-option>
-              <a href="home.html">Pads</a>
+              <a routerLinkActive="active" routerLink="/category/3">Pads</a>
             </mat-list-option>
             <mat-list-option>
-              <a href="home.html">Tags</a>
+              <a routerLinkActive="active" routerLink="/category/4">Tags</a>
             </mat-list-option>
           </mat-selection-list>
         </nav>
@@ -28,6 +32,10 @@
   </mat-sidenav-container>
 </div>
 
+<!-- ******* TODO ******* -->
+<!-- ******* TODO ******* -->
+<!-- ******* TODO ******* -->
+<!-- COMPONENTIZAR COMO HEADER -->
 <div class="page-container">
   <header class="header-desktop">
     <div class="section-content section-content-p30">
@@ -52,10 +60,11 @@
 
           <div class="cart-area d-n">
             <a href="shopping-detail.html">
-              <div class="total">19.22 <span> 2</span> </div> <i class="fa fa-shopping-cart"
-                aria-hidden="true"></i>
+              <div class="total">19.22&nbsp;<span>&nbsp;2</span></div>
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </a>
           </div>
+
         </div>
         <div class="account-wrap"></div>
       </div>
@@ -63,16 +72,7 @@
   </header>
 </div>
 
-<section>
-  <app-product-list></app-product-list>
-</section>
-
-<footer>
-  <ul>
-    <li><a href="#">Sobre</a></li>
-    <li><a href="#">Contato</a></li>
-    <li><a href="#">Ajuda</a></li>
-  </ul>
-</footer>
+<!-- <app-product-list></app-product-list>
+<app-footer></app-footer> -->
 
 <router-outlet></router-outlet>

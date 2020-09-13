@@ -8,7 +8,7 @@ import { Product } from '../shared/product';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:8080/api/products?size=100';
+  private baseUrl = 'http://localhost:8080/api/products';
 
   constructor(private http: HttpClient) { }
 
@@ -17,8 +17,13 @@ export class ProductService {
       map(resp => resp._embedded.products)
     );
   }
-}
 
+  getProductListById(id: number) {
+    return this.http.get<GetResponse>(`${this.baseUrl}/search/findByCategoryId?id=${id}`).pipe(
+      map(resp => resp._embedded.products)
+    );
+  }
+}
 
 interface GetResponse {
   _embedded: {

@@ -9,16 +9,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductService } from './services/product.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { ProductService } from './services/product.service';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatProgressSpinnerModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
