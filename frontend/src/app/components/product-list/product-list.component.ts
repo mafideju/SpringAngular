@@ -17,6 +17,9 @@ export class ProductListComponent implements OnInit {
   dataSource = this.products;
   catId: number;
   currentId: number;
+  currentCatName: string;
+  keyword: string;
+  searchMode: boolean;
 
   constructor(
     private productService: ProductService,
@@ -25,23 +28,42 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     // this.dataSource.paginator = this.paginator;
-    this.getProductList();
+    this.handleProductsScreening();
+
+    // SUBSCRIBE PARA PEGAR VALORES VIA ROUTER
     this.route.paramMap.subscribe(() => {
-      this.getProductList();
+      this.handleProductsScreening();
     });
   }
 
+  handleProductsScreening() {
+    this.searchMode = this.route.snapshot.paramMap.has('keyword');
+
+    this.searchMode ? this.searchProduct() : this.getProductList();
+  }
+
   getProductList() {
-    const hasCatId: boolean = this.route.snapshot.paramMap.has("id");
-    hasCatId ? this.currentId = +this.route.snapshot.paramMap.get("id") : this.currentId = 1 ;
 
-    console.log('this.currentId :>> ', this.currentId);
+    if (this.route.snapshot.paramMap.has("id")) {
+      this.currentId = +this.route.snapshot.paramMap.get("id");
+      this.currentCatName = this.route.snapshot.paramMap.get("name");
+    } else {
+      this.currentCatName = 'Books';
+      this.currentId = 1;
+    }
 
-    this.productService.getProductListById(this.currentId).subscribe(resp => {
-      console.log('productService.getProductListById :>> ', resp);
+    this.productService.getProductListByCategoryId(this.currentId).subscribe(resp => {
       this.products = resp;
     });
 
+  }
+
+  searchProduct() {
+    const keyword: string = this.route.snapshot.paramMap.get('keyword');
+
+    this.productService.searchProductService(keyword).subscribe(resp => {
+      this.products = resp;
+    });
   }
 
 }

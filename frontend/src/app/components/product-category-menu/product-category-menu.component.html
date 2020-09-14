@@ -1,0 +1,7 @@
+<nav>
+  <mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let item of productCategories">
+      <a routerLinkActive="active" routerLink="/category/{{ item.id }}/{{ item.categoryName }}">{{ item.categoryName }}</a>
+    </mat-list-option>
+  </mat-selection-list>
+</nav>

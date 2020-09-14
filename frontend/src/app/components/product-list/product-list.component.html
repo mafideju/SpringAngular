@@ -1,5 +1,5 @@
 <!-- LOADING SPINNER -->
-<div *ngIf="!products" class="table__no-data">
+<!-- <div *ngIf="!products" class="table__no-data">
   <mat-spinner
     color="accent"
     diameter=200
@@ -7,7 +7,11 @@
     mode="determinate"
     value=70
   ></mat-spinner>
-</div>
+</div> -->
+
+<article style="margin: 1rem 0 0 12.5rem;">
+  <h4>Você está em {{ currentCatName }}</h4>
+</article>
 
 <!-- MATERIAL TABLE -->
 <section *ngIf="products">
@@ -41,4 +45,18 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</section>
+
+<section *ngIf="products?.length == 0" style="margin:3rem auto;width: 30rem" role="alert">
+  <mat-card style="background-color:rgb(228, 194, 248);color: blueviolet;">
+    <mat-card-header>
+      <mat-card-title>Ooops...</mat-card-title>
+      <mat-card-subtitle>Nenhum Produto Encontrado!</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam molestias fuga voluptates obcaecati modi perspiciatis architecto, et eveniet enim corrupti culpa, vitae voluptatem dolor repellendus animi ipsa iure dicta alias commodi quisquam suscipit. Veniam, quam quae, necessitatibus amet illum, iusto nostrum itaque molestiae earum tenetur fugit expedita eveniet? Necessitatibus, reprehenderit!
+      </p>
+    </mat-card-content>
+  </mat-card>
 </section>

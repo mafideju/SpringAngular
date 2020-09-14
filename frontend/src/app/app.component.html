@@ -6,27 +6,15 @@
   <mat-sidenav-container>
     <mat-sidenav mode="side" opened>
       <aside class="menu-sidebar">
+
         <div class="logo">
           <a href="home.html">
             <img src="assets/images/logo.png" alt="luv2shop" style="width: 100%;">
           </a>
         </div>
-        <nav>
-          <mat-selection-list [multiple]="false">
-            <mat-list-option>
-              <a routerLinkActive="active" routerLink="/category/1">Livros</a>
-            </mat-list-option>
-            <mat-list-option>
-              <a routerLinkActive="active" routerLink="/category/2">Canecas</a>
-            </mat-list-option>
-            <mat-list-option>
-              <a routerLinkActive="active" routerLink="/category/3">Pads</a>
-            </mat-list-option>
-            <mat-list-option>
-              <a routerLinkActive="active" routerLink="/category/4">Tags</a>
-            </mat-list-option>
-          </mat-selection-list>
-        </nav>
+
+        <app-product-category-menu></app-product-category-menu>
+
       </aside>
     </mat-sidenav>
   </mat-sidenav-container>
@@ -42,21 +30,7 @@
       <div class="container-fluid">
         <div class="header-wrap">
 
-          <form class="form-header" onsubmit="return false;" method="GET">
-
-            <mat-form-field appearance="fill">
-              <mat-label>faça uma busca...</mat-label>
-              <input
-                matInput
-                type="text"
-                name="search"
-                placeholder="...encontre seu produto!"
-              />
-            </mat-form-field>
-
-            <button mat-raised-button color="primary">Buscar</button>
-
-          </form>
+          <app-search></app-search>
 
           <div class="cart-area d-n">
             <a href="shopping-detail.html">
@@ -72,7 +46,5 @@
   </header>
 </div>
 
-<!-- <app-product-list></app-product-list>
-<app-footer></app-footer> -->
 
 <router-outlet></router-outlet>

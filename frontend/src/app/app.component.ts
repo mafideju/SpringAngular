@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'FrontEnd';
-  name = 'Marcio Rodrigues';
+
+  // constructor(
+  //   private router: Router
+  // ) { }
+
+  // searchProduct(value: string) {
+  //   console.log('searchProduct.value :>> ', value);
+  //   this.router.navigateByUrl(`/search/${value}`);
+  // }
 }

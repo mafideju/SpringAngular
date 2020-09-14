@@ -1,0 +1,17 @@
+<form class="form-header">
+
+  <mat-form-field appearance="fill">
+    <mat-label>faça uma busca, aperte o enter e...</mat-label>
+    <input
+      #search
+      matInput
+      (keyup.enter)="searchProduct(search.value)"
+      type="text"
+      name="search"
+      placeholder="...encontre seu produto!"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button (click)="searchProduct(search.value)" color="primary">Buscar</button>
+
+</form>
