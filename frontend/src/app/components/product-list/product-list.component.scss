@@ -11,9 +11,21 @@
 }
 
 mat-table {
+  mat-row {
+    &:hover {
+      cursor: pointer;
+      background-color: #a777eb;
+      color: white;
+    }
+  }
+
   mat-cell {
     display: flex;
     align-items: center;
     padding: 0 1rem;
+
+    &:hover {
+      color: white;
+    }
   }
 }

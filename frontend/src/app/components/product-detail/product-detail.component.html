@@ -1,0 +1,17 @@
+<mat-card>
+  <div>
+    <img [src]="product?.imageUrl" alt="" class="detail-img">
+
+    <h3>{{ product?.name }}</h3>
+    <div class="price">{{ product?.unitPrice | currency:'BRL' }}</div>
+    <a href="#" class="primary-btn">Carrinho</a>
+
+    <hr>
+
+    <h4>Descrição</h4>
+    <p>{{ product?.description }}</p>
+
+
+    <a routerLink="/products">Voltar</a>
+  </div>
+</mat-card>

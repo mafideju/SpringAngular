@@ -14,31 +14,35 @@
 </article>
 
 <!-- MATERIAL TABLE -->
-<section *ngIf="products">
+<section *ngIf="products && products.length">
   <mat-table [dataSource]="products" class="mat-elevation-z8">
     <ng-container matColumnDef="Imagem">
       <mat-header-cell *matHeaderCellDef> Imagem </mat-header-cell>
-      <mat-cell *matCellDef="let product"> <img class="table__image" [src]="product.imageUrl" /> </mat-cell>
+      <mat-cell *matCellDef="let product" [routerLink]="product.id">
+        <img class="table__image" [src]="product.imageUrl" />
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Produto">
       <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>
-      <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
+      <mat-cell *matCellDef="let product" [routerLink]="product.id"> {{ product.name }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Preço">
       <mat-header-cell *matHeaderCellDef> Preço </mat-header-cell>
-      <mat-cell *matCellDef="let product"> {{ product.unitPrice | currency:"BRL" }} </mat-cell>
+      <mat-cell *matCellDef="let product" [routerLink]="product.id"> {{ product.unitPrice | currency:"BRL" }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Estoque">
       <mat-header-cell *matHeaderCellDef> Estoque </mat-header-cell>
-      <mat-cell *matCellDef="let product"> {{ product.unitsInStock }} </mat-cell>
+      <mat-cell *matCellDef="let product" [routerLink]="product.id"> {{ product.unitsInStock }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Carrinho">
       <mat-header-cell *matHeaderCellDef> Carrinho </mat-header-cell>
-      <mat-cell *matCellDef="let product"> <button mat-raised-button color="primary">Adicionar</button> </mat-cell>
+      <mat-cell *matCellDef="let product">
+        <button mat-raised-button color="primary">Adicionar</button>
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
