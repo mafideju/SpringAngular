@@ -1,4 +1,5 @@
 export class Product {
+  id: string;
   sku: string;
   name: string;
   description: string;
@@ -8,4 +9,5 @@ export class Product {
   unitsInStock: number;
   dateCreated: Date;
   lastUpdate: Date;
+  paginator: any
 }
